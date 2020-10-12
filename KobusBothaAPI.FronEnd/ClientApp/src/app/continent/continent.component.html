@@ -1,0 +1,34 @@
+<h1 id="tableLabel">Continent</h1>
+
+<p>This component get related continent data.</p>
+
+<p *ngIf="!continents"><em>Loading...</em></p>
+
+<table class='table table-striped' aria-labelledby="tableLabel" *ngIf="continents">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Total New</th>
+      <th>Total Active</th>
+      <th>Percentage Total</th>
+      <th>Percentage Active</th>
+      <th>Deaths Total</th>
+      <th>Deaths Percentage</th>
+      <th>Tests Total</th>
+      <th>Tests Percentage</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let continent of continents">
+      <td>{{ continent.name }}</td>
+      <td>{{ continent.cases.totalNew }}</td>
+      <td>{{ continent.cases.totalActive }}</td>
+      <td>{{ continent.cases.percentageTotal }}</td>
+      <td>{{ continent.cases.percentageActive }}</td>
+      <td>{{ continent.deaths.total }}</td>
+      <td>{{ continent.deaths.percentage }}</td>
+      <td>{{ continent.tests.total }}</td>
+      <td>{{ continent.tests.percentage }}</td>
+    </tr>
+  </tbody>
+</table>
